@@ -103,7 +103,7 @@ namespace SubSonic.Linq.Structure
             string result = "";
             try {
                 IColumn column = this.Language.DataProvider.FindTable(member.ReflectedType.Name).GetColumnByPropertyName(propertyName);
-                result = column == null ? "" : column.Name;
+                result = column == null ? "" : column.ObjName;
             } catch {
 
             }

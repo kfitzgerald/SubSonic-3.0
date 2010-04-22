@@ -290,7 +290,7 @@ namespace SubSonic.Handlers
                     ITable tbl = provider.FindTable(_url.TableName);
 
                     if(_url.PrimaryKey != null)
-                        qry = qry.Where(tbl.PrimaryKey.Name).IsEqualTo(_url.PrimaryKey);
+                        qry = qry.Where(tbl.PrimaryKey.ObjName).IsEqualTo(_url.PrimaryKey);
                     //q.WHERE(q.Schema.PrimaryKey.ParameterName, _url.PrimaryKey);
 
                     if(_url.Parameters != null)
@@ -331,10 +331,10 @@ namespace SubSonic.Handlers
                                 {
                                     comp = Comparison.Like;
                                     paramValue = String.Concat("%", paramValue, "%");
-                                    qry = qry.Where(column.Name).Like(paramValue.ToString());
+                                    qry = qry.Where(column.ObjName).Like(paramValue.ToString());
                                 }
                                 else if(paramValue.ToString().ToLower() == "null")
-                                    qry = qry.Where(column.Name).IsNull();
+                                    qry = qry.Where(column.ObjName).IsNull();
 
                                 //q.WHERE(column.ColumnName, comp, paramValue);
                             }

@@ -40,7 +40,7 @@ namespace SubSonic.Schema
         public DatabaseTable(string schema, string name, IDataProvider provider, string classname)
         {
             _provider = provider;
-            Name = name;
+            ObjName = name;
             SchemaName = schema;
             ClassName = classname;
             Columns = new List<IColumn>();
@@ -90,7 +90,7 @@ namespace SubSonic.Schema
         }
 
         public string SchemaName { get; set; }
-        public string Name { get; set; }
+        public string ObjName { get; set; }
         public string FriendlyName { get; set; }
         public string ClassName { get; set; }
 
@@ -104,12 +104,12 @@ namespace SubSonic.Schema
 
         public IColumn GetColumn(string ColumnName)
         {
-            return Columns.Where(c => c.Name.Matches(ColumnName)).SingleOrDefault();
+            return Columns.Where(c => c.ObjName.Matches(ColumnName)).SingleOrDefault();
         }
 
         public IColumn GetColumnByPropertyName(string PropertyName)
         {
-            return Columns.SingleOrDefault(x => x.Name.Equals(PropertyName, StringComparison.InvariantCultureIgnoreCase));
+            return Columns.SingleOrDefault(x => x.ObjName.Equals(PropertyName, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public string CreateSql
@@ -124,7 +124,7 @@ namespace SubSonic.Schema
 
         public string DropColumnSql(string columnName)
         {
-            return Provider.SchemaGenerator.BuildDropColumnStatement(Name, columnName);
+            return Provider.SchemaGenerator.BuildDropColumnStatement(ObjName, columnName);
         }
 
         #endregion
@@ -132,7 +132,7 @@ namespace SubSonic.Schema
 
         public override string ToString()
         {
-            return Name;
+            return ObjName;
         }
 
         /// <summary>

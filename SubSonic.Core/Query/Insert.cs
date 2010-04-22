@@ -41,7 +41,7 @@ namespace SubSonic.Query
         private readonly IDataProvider _provider;
         public List<string> ColumnList = new List<string>();
         public List<InsertSetting> Inserts = new List<InsertSetting>();
-        internal SqlQuery SelectValues;
+        internal SqlQuery SelectValues = null;
         internal ITable Table;
         private string tableName = "";
 
@@ -89,7 +89,7 @@ namespace SubSonic.Query
         {
             ColumnList.Clear();
             Table = _provider.FindOrCreateTable(typeof(T));
-            tableName = Table.Name;
+            tableName = Table.ObjName;
             Init();
             foreach(object o in props)
             {
@@ -110,7 +110,7 @@ namespace SubSonic.Query
             ColumnList.Clear();
             ColumnList.AddRange(columns);
             Table = _provider.FindOrCreateTable(typeof(T));
-            tableName = Table.Name;
+            tableName = Table.ObjName;
             Init();
             return this; //Init(new T().GetSchema());
         }
@@ -125,7 +125,7 @@ namespace SubSonic.Query
         {
             ColumnList.Clear();
             Table = tbl;
-            tableName = tbl.Name;
+            tableName = tbl.ObjName;
             Init();
             return this;
         }

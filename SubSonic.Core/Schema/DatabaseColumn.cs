@@ -41,7 +41,7 @@ namespace SubSonic.Schema
         public DatabaseColumn(string columnName, ITable tbl)
         {
             Table = tbl;
-            Name = columnName;
+            ObjName = columnName;
         }
 
 
@@ -72,7 +72,7 @@ namespace SubSonic.Schema
             set { Table.Provider = value; }
         }
 
-        public string Name { get; set; }
+        public string ObjName { get; set; }
         public string PropertyName { get; set; }
 
         public string ParameterName
@@ -149,7 +149,7 @@ namespace SubSonic.Schema
 
         public string CreateSql
         {
-            get { return Provider.SchemaGenerator.BuildAddColumnStatement(Table.Name, this); }
+            get { return Provider.SchemaGenerator.BuildAddColumnStatement(Table.ObjName, this); }
         }
 
         public string AlterSql
@@ -159,7 +159,7 @@ namespace SubSonic.Schema
 
         public string DeleteSql
         {
-            get { return Provider.SchemaGenerator.BuildDropColumnStatement(Table.Name, Name); }
+            get { return Provider.SchemaGenerator.BuildDropColumnStatement(Table.ObjName, ObjName); }
         }
 
         #endregion
@@ -167,7 +167,7 @@ namespace SubSonic.Schema
 
         public override string ToString()
         {
-            return Name;
+            return ObjName;
         }
 
         public override bool Equals(object obj)

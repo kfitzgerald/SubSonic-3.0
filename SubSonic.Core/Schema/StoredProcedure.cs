@@ -40,7 +40,7 @@ namespace SubSonic.Schema
             get
             {
                 const string paramFormat = "{0}{1}";
-                return string.Format(paramFormat, Provider.ParameterPrefix, Name);
+                return string.Format(paramFormat, Provider.ParameterPrefix, ObjName);
             }
         }
 
@@ -51,7 +51,7 @@ namespace SubSonic.Schema
 
         public string SchemaName { get; set; }
         public string FriendlyName { get; set; }
-        public string Name { get; set; }
+        public string ObjName { get; set; }
 
         public string QualifiedName
         {

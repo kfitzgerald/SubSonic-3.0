@@ -68,7 +68,7 @@ namespace SubSonic.Tests.Unit.Extensions
             var provider = ProviderFactory.GetProvider("WestWind");
             var table = typeof(Product).ToSchemaTable(provider);
 
-            Assert.Equal(table.PrimaryKey.Name, "ProductID");
+            Assert.Equal(table.PrimaryKey.ObjName, "ProductID");
         }
 
         [Fact]

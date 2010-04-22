@@ -303,7 +303,7 @@ namespace SubSonic.Extensions
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="rdr"></param>
-
+        /// <param name="ColumnNames"></param>
     	public static IEnumerable<T> ToEnumerable<T>(this IDataReader rdr, List<string> ColumnNames){//mike added ColumnNames
 
             List<T> result = new List<T>();
@@ -375,7 +375,7 @@ namespace SubSonic.Extensions
                 foreach(var dirty in ar.GetDirtyColumns())
                 {
                     if(!dirty.IsPrimaryKey && !dirty.IsReadOnly)
-                        query.Set(dirty.Name).EqualTo(settings[dirty.Name]);
+                        query.Set(dirty.ObjName).EqualTo(settings[dirty.ObjName]);
                 }
             }
             else
@@ -392,11 +392,11 @@ namespace SubSonic.Extensions
             }
 
             //add the PK constraint
-            Constraint c = new Constraint(ConstraintType.Where, tbl.PrimaryKey.Name)
+            Constraint c = new Constraint(ConstraintType.Where, tbl.PrimaryKey.ObjName)
                                {
-                                   ParameterValue = settings[tbl.PrimaryKey.Name],
-                                   ParameterName = tbl.PrimaryKey.Name,
-                                   ConstructionFragment = tbl.PrimaryKey.Name
+                                   ParameterValue = settings[tbl.PrimaryKey.FriendlyName],
+                                   ParameterName = tbl.PrimaryKey.ObjName,
+                                   ConstructionFragment = tbl.PrimaryKey.ObjName
                                };
             query.Constraints.Add(c);
 
@@ -444,11 +444,11 @@ namespace SubSonic.Extensions
                 var settings = item.ToDictionary();
                 if(pk != null)
                 {
-                    var c = new Constraint(ConstraintType.Where, pk.Name)
+                    var c = new Constraint(ConstraintType.Where, pk.ObjName)
                                 {
-                                    ParameterValue = settings[pk.Name],
-                                    ParameterName = pk.Name,
-                                    ConstructionFragment = pk.Name
+                                    ParameterValue = settings[pk.ObjName],
+                                    ParameterName = pk.ObjName,
+                                    ConstructionFragment = pk.ObjName
                                 };
                     query.Constraints.Add(c);
                 }

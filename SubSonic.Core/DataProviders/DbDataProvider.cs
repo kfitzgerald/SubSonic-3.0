@@ -329,7 +329,7 @@ namespace SubSonic.DataProviders
             //}
 
             //var result = Schema.Tables.FirstOrDefault(x => x.Name.ToLower() == tableName.ToLower());
-            var result = Schema.Tables.FirstOrDefault(x => x.Name.Equals(tableName, StringComparison.InvariantCultureIgnoreCase)) ??
+            var result = Schema.Tables.FirstOrDefault(x => x.ObjName.Equals(tableName, StringComparison.InvariantCultureIgnoreCase)) ??
                          Schema.Tables.FirstOrDefault(x => x.ClassName.Equals(tableName, StringComparison.InvariantCultureIgnoreCase));
 
             return result;
@@ -363,11 +363,11 @@ namespace SubSonic.DataProviders
             {
                 case DataClient.MySqlClient:
                 case DataClient.SQLite:
-                    qualifiedTable = String.Format("`{0}`", tbl.Name);
+                    qualifiedTable = String.Format("`{0}`", tbl.ObjName);
                     break;
                 default:
                     string qualifiedFormat = String.IsNullOrEmpty(tbl.SchemaName) ? "[{1}]" : "[{0}].[{1}]";
-                    qualifiedTable = String.Format(qualifiedFormat, tbl.SchemaName, tbl.Name);
+                    qualifiedTable = String.Format(qualifiedFormat, tbl.SchemaName, tbl.ObjName);
                     break;
             }
 
@@ -391,13 +391,13 @@ namespace SubSonic.DataProviders
                     break;
             }
 
-            return String.Format(qualifiedFormat, column.Table.SchemaName, column.Table.Name, column.Name);
+            return String.Format(qualifiedFormat, column.Table.SchemaName, column.Table.ObjName, column.ObjName);
         }
 
         public string QualifySPName(IStoredProcedure sp)
         {
             const string qualifiedFormat = "[{0}].[{1}]";
-            return String.Format(qualifiedFormat, sp.SchemaName, sp.Name);
+            return String.Format(qualifiedFormat, sp.SchemaName, sp.ObjName);
         }
 
         public ITable GetTableFromDB(string tableName)

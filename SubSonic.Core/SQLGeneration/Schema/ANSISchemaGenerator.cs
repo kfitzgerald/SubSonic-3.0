@@ -44,7 +44,7 @@ namespace SubSonic.SqlGeneration.Schema
         public virtual string BuildCreateTableStatement(ITable table)
         {
             string columnSql = GenerateColumns(table);
-            return string.Format(CREATE_TABLE, table.Name, columnSql);
+            return string.Format(CREATE_TABLE, table.ObjName, columnSql);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace SubSonic.SqlGeneration.Schema
                 SetColumnDefaults(column);
             }
 
-            sql.AppendFormat(ADD_COLUMN, tableName, column.Name, GenerateColumnAttributes(column));
+            sql.AppendFormat(ADD_COLUMN, tableName, column.ObjName, GenerateColumnAttributes(column));
             
             //if the column isn't nullable and there are records already
             //the default setting won't be honored and a null value could be entered (in SQLite for instance)
@@ -83,9 +83,9 @@ namespace SubSonic.SqlGeneration.Schema
             {
                 sql.AppendLine();
                 if (column.IsString || column.IsDateTime)
-                    sql.AppendFormat("UPDATE {0} SET {1}='{2}';", tableName, column.Name, column.DefaultSetting);
+                    sql.AppendFormat("UPDATE {0} SET {1}='{2}';", tableName, column.ObjName, column.DefaultSetting);
                 else {
-                    sql.AppendFormat("UPDATE {0} SET {1}={2};", tableName, column.Name, column.DefaultSetting);
+                    sql.AppendFormat("UPDATE {0} SET {1}={2};", tableName, column.ObjName, column.DefaultSetting);
                 }
             }
             
@@ -99,7 +99,7 @@ namespace SubSonic.SqlGeneration.Schema
         public virtual string BuildAlterColumnStatement(IColumn column)
         {
             var sql = new StringBuilder();
-            sql.AppendFormat(ALTER_COLUMN, column.Table.Name, column.Name, GenerateColumnAttributes(column));
+            sql.AppendFormat(ALTER_COLUMN, column.Table.ObjName, column.ObjName, GenerateColumnAttributes(column));
             return sql.ToString();
         }
 
@@ -135,7 +135,7 @@ namespace SubSonic.SqlGeneration.Schema
             StringBuilder createSql = new StringBuilder();
 
             foreach(IColumn col in table.Columns)
-                createSql.AppendFormat("\r\n  [{0}]{1},", col.Name, GenerateColumnAttributes(col));
+                createSql.AppendFormat("\r\n  [{0}]{1},", col.ObjName, GenerateColumnAttributes(col));
             string columnSql = createSql.ToString();
             return columnSql.Chop(",");
         }

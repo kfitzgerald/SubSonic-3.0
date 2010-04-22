@@ -70,7 +70,7 @@ namespace SubSonic.SqlGeneration.Schema
 
             //add a named PK constraint so we can drop it later
             result += "ALTER TABLE " + table.QualifiedName + "\r\n";
-            result += string.Format("ADD CONSTRAINT PK_{0}_{1} PRIMARY KEY([{1}])", table.Name, table.PrimaryKey.Name);
+            result += string.Format("ADD CONSTRAINT PK_{0}_{1} PRIMARY KEY([{1}])", table.ObjName, table.PrimaryKey.ObjName);
 
             return result;
         }
@@ -166,7 +166,7 @@ namespace SubSonic.SqlGeneration.Schema
                         defaultValue = string.Format("'{0}'", defaultValue);
                 }
                 
-                sb.Append(" CONSTRAINT DF_" + column.Table.Name + "_" + column.Name + " DEFAULT (" +
+                sb.Append(" CONSTRAINT DF_" + column.Table.ObjName + "_" + column.ObjName + " DEFAULT (" +
                           defaultValue + ")");
             }
 

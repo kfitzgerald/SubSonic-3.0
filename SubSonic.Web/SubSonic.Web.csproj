@@ -53,7 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SubSonic.Core\SubSonic.csproj">
+    <ProjectReference Include="..\SubSonic.Core\SubSonic.Core.csproj">
       <Project>{53FF90B2-2D33-4EC0-91B6-A30FDF1B3374}</Project>
       <Name>SubSonic</Name>
     </ProjectReference>

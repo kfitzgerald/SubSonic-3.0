@@ -136,7 +136,7 @@ namespace SubSonic.Repository
             if (_options.Contains(SimpleRepositoryOptions.RunMigrations))
                 Migrate<T>();
             var tbl = _provider.FindOrCreateTable<T>();
-            var qry = new Select(_provider).From(tbl).Paged(pageIndex + 1, pageSize).OrderAsc(tbl.PrimaryKey.Name);
+            var qry = new Select(_provider).From(tbl).Paged(pageIndex + 1, pageSize).OrderAsc(tbl.PrimaryKey.ObjName);
             var total =
                 new Select(_provider, new Aggregate(tbl.PrimaryKey, AggregateFunction.Count)).From<T>().ExecuteScalar();
             int totalRecords = 0;
@@ -194,12 +194,13 @@ namespace SubSonic.Repository
             if (result != null && result != DBNull.Value) {
                 try {
                     var tbl =  _provider.FindOrCreateTable(typeof(T));
-                    var prop = item.GetType().GetProperty(tbl.PrimaryKey.Name);
+                    var prop = item.GetType().GetProperty(tbl.PrimaryKey.ObjName);
                     var settable = result.ChangeTypeTo(prop.PropertyType);
                     prop.SetValue(item, settable, null);
 
                 	return settable;
-                } catch(Exception x) {
+                } catch //(Exception x) 
+                {
                     //swallow it - I don't like this per se but this is a convenience and we
                     //don't want to throw the whole thing just because we can't auto-set the value
                 }

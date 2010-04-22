@@ -314,9 +314,9 @@ namespace SouthWind
             {
                 if(_CategoryID!=value){
                     _CategoryID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CategoryID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CategoryID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -333,9 +333,9 @@ namespace SouthWind
             {
                 if(_CategoryName!=value){
                     _CategoryName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CategoryName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CategoryName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -352,9 +352,9 @@ namespace SouthWind
             {
                 if(_Description!=value){
                     _Description=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Description");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Description");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -371,9 +371,9 @@ namespace SouthWind
             {
                 if(_Picture!=value){
                     _Picture=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Picture");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Picture");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -809,9 +809,9 @@ namespace SouthWind
             {
                 if(_CustomerID!=value){
                     _CustomerID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CustomerID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CustomerID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -828,9 +828,9 @@ namespace SouthWind
             {
                 if(_CompanyName!=value){
                     _CompanyName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CompanyName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CompanyName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -847,9 +847,9 @@ namespace SouthWind
             {
                 if(_ContactName!=value){
                     _ContactName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ContactName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ContactName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -866,9 +866,9 @@ namespace SouthWind
             {
                 if(_ContactTitle!=value){
                     _ContactTitle=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ContactTitle");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ContactTitle");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -885,9 +885,9 @@ namespace SouthWind
             {
                 if(_Address!=value){
                     _Address=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Address");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Address");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -904,9 +904,9 @@ namespace SouthWind
             {
                 if(_City!=value){
                     _City=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="City");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="City");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -923,9 +923,9 @@ namespace SouthWind
             {
                 if(_Region!=value){
                     _Region=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Region");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Region");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -942,9 +942,9 @@ namespace SouthWind
             {
                 if(_PostalCode!=value){
                     _PostalCode=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="PostalCode");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="PostalCode");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -961,9 +961,9 @@ namespace SouthWind
             {
                 if(_Country!=value){
                     _Country=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Country");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Country");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -980,9 +980,9 @@ namespace SouthWind
             {
                 if(_Phone!=value){
                     _Phone=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Phone");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Phone");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -999,9 +999,9 @@ namespace SouthWind
             {
                 if(_Fax!=value){
                     _Fax=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Fax");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Fax");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1430,9 +1430,9 @@ namespace SouthWind
             {
                 if(_ShipperID!=value){
                     _ShipperID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipperID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipperID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1449,9 +1449,9 @@ namespace SouthWind
             {
                 if(_CompanyName!=value){
                     _CompanyName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CompanyName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CompanyName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1468,9 +1468,9 @@ namespace SouthWind
             {
                 if(_Phone!=value){
                     _Phone=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Phone");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Phone");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1899,9 +1899,9 @@ namespace SouthWind
             {
                 if(_SupplierID!=value){
                     _SupplierID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="SupplierID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="SupplierID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1918,9 +1918,9 @@ namespace SouthWind
             {
                 if(_CompanyName!=value){
                     _CompanyName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CompanyName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CompanyName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1937,9 +1937,9 @@ namespace SouthWind
             {
                 if(_ContactName!=value){
                     _ContactName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ContactName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ContactName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1956,9 +1956,9 @@ namespace SouthWind
             {
                 if(_ContactTitle!=value){
                     _ContactTitle=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ContactTitle");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ContactTitle");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1975,9 +1975,9 @@ namespace SouthWind
             {
                 if(_Address!=value){
                     _Address=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Address");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Address");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -1994,9 +1994,9 @@ namespace SouthWind
             {
                 if(_City!=value){
                     _City=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="City");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="City");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2013,9 +2013,9 @@ namespace SouthWind
             {
                 if(_Region!=value){
                     _Region=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Region");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Region");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2032,9 +2032,9 @@ namespace SouthWind
             {
                 if(_PostalCode!=value){
                     _PostalCode=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="PostalCode");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="PostalCode");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2051,9 +2051,9 @@ namespace SouthWind
             {
                 if(_Country!=value){
                     _Country=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Country");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Country");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2070,9 +2070,9 @@ namespace SouthWind
             {
                 if(_Phone!=value){
                     _Phone=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Phone");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Phone");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2089,9 +2089,9 @@ namespace SouthWind
             {
                 if(_Fax!=value){
                     _Fax=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Fax");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Fax");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2108,9 +2108,9 @@ namespace SouthWind
             {
                 if(_HomePage!=value){
                     _HomePage=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="HomePage");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="HomePage");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2575,9 +2575,9 @@ namespace SouthWind
             {
                 if(_OrderID!=value){
                     _OrderID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="OrderID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="OrderID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2594,9 +2594,9 @@ namespace SouthWind
             {
                 if(_CustomerID!=value){
                     _CustomerID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CustomerID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CustomerID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2613,9 +2613,9 @@ namespace SouthWind
             {
                 if(_EmployeeID!=value){
                     _EmployeeID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="EmployeeID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="EmployeeID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2632,9 +2632,9 @@ namespace SouthWind
             {
                 if(_OrderDate!=value){
                     _OrderDate=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="OrderDate");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="OrderDate");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2651,9 +2651,9 @@ namespace SouthWind
             {
                 if(_RequiredDate!=value){
                     _RequiredDate=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="RequiredDate");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="RequiredDate");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2670,9 +2670,9 @@ namespace SouthWind
             {
                 if(_ShippedDate!=value){
                     _ShippedDate=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShippedDate");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShippedDate");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2689,9 +2689,9 @@ namespace SouthWind
             {
                 if(_ShipVia!=value){
                     _ShipVia=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipVia");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipVia");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2708,9 +2708,9 @@ namespace SouthWind
             {
                 if(_Freight!=value){
                     _Freight=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Freight");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Freight");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2727,9 +2727,9 @@ namespace SouthWind
             {
                 if(_ShipName!=value){
                     _ShipName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2746,9 +2746,9 @@ namespace SouthWind
             {
                 if(_ShipAddress!=value){
                     _ShipAddress=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipAddress");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipAddress");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2765,9 +2765,9 @@ namespace SouthWind
             {
                 if(_ShipCity!=value){
                     _ShipCity=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipCity");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipCity");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2784,9 +2784,9 @@ namespace SouthWind
             {
                 if(_ShipRegion!=value){
                     _ShipRegion=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipRegion");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipRegion");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2803,9 +2803,9 @@ namespace SouthWind
             {
                 if(_ShipPostalCode!=value){
                     _ShipPostalCode=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipPostalCode");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipPostalCode");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -2822,9 +2822,9 @@ namespace SouthWind
             {
                 if(_ShipCountry!=value){
                     _ShipCountry=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ShipCountry");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ShipCountry");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3277,9 +3277,9 @@ namespace SouthWind
             {
                 if(_ProductID!=value){
                     _ProductID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ProductID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ProductID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3296,9 +3296,9 @@ namespace SouthWind
             {
                 if(_ProductName!=value){
                     _ProductName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ProductName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ProductName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3315,9 +3315,9 @@ namespace SouthWind
             {
                 if(_SupplierID!=value){
                     _SupplierID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="SupplierID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="SupplierID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3334,9 +3334,9 @@ namespace SouthWind
             {
                 if(_CategoryID!=value){
                     _CategoryID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CategoryID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CategoryID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3353,9 +3353,9 @@ namespace SouthWind
             {
                 if(_QuantityPerUnit!=value){
                     _QuantityPerUnit=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="QuantityPerUnit");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="QuantityPerUnit");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3372,9 +3372,9 @@ namespace SouthWind
             {
                 if(_UnitPrice!=value){
                     _UnitPrice=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="UnitPrice");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="UnitPrice");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3391,9 +3391,9 @@ namespace SouthWind
             {
                 if(_UnitsInStock!=value){
                     _UnitsInStock=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="UnitsInStock");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="UnitsInStock");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3410,9 +3410,9 @@ namespace SouthWind
             {
                 if(_UnitsOnOrder!=value){
                     _UnitsOnOrder=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="UnitsOnOrder");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="UnitsOnOrder");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3429,9 +3429,9 @@ namespace SouthWind
             {
                 if(_ReorderLevel!=value){
                     _ReorderLevel=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ReorderLevel");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ReorderLevel");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3448,9 +3448,9 @@ namespace SouthWind
             {
                 if(_Discontinued!=value){
                     _Discontinued=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Discontinued");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Discontinued");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3891,9 +3891,9 @@ namespace SouthWind
             {
                 if(_OrderID!=value){
                     _OrderID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="OrderID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="OrderID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3910,9 +3910,9 @@ namespace SouthWind
             {
                 if(_ProductID!=value){
                     _ProductID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ProductID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ProductID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3929,9 +3929,9 @@ namespace SouthWind
             {
                 if(_UnitPrice!=value){
                     _UnitPrice=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="UnitPrice");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="UnitPrice");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3948,9 +3948,9 @@ namespace SouthWind
             {
                 if(_Quantity!=value){
                     _Quantity=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Quantity");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Quantity");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -3967,9 +3967,9 @@ namespace SouthWind
             {
                 if(_Discount!=value){
                     _Discount=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Discount");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Discount");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -4405,9 +4405,9 @@ namespace SouthWind
             {
                 if(_CustomerID!=value){
                     _CustomerID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CustomerID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CustomerID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -4424,9 +4424,9 @@ namespace SouthWind
             {
                 if(_CustomerTypeID!=value){
                     _CustomerTypeID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CustomerTypeID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CustomerTypeID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -4850,9 +4850,9 @@ namespace SouthWind
             {
                 if(_CustomerTypeID!=value){
                     _CustomerTypeID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CustomerTypeID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CustomerTypeID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -4869,9 +4869,9 @@ namespace SouthWind
             {
                 if(_CustomerDesc!=value){
                     _CustomerDesc=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="CustomerDesc");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="CustomerDesc");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -5300,9 +5300,9 @@ namespace SouthWind
             {
                 if(_RegionID!=value){
                     _RegionID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="RegionID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="RegionID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -5319,9 +5319,9 @@ namespace SouthWind
             {
                 if(_RegionDescription!=value){
                     _RegionDescription=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="RegionDescription");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="RegionDescription");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -5757,9 +5757,9 @@ namespace SouthWind
             {
                 if(_TerritoryID!=value){
                     _TerritoryID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="TerritoryID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="TerritoryID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -5776,9 +5776,9 @@ namespace SouthWind
             {
                 if(_TerritoryDescription!=value){
                     _TerritoryDescription=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="TerritoryDescription");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="TerritoryDescription");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -5795,9 +5795,9 @@ namespace SouthWind
             {
                 if(_RegionID!=value){
                     _RegionID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="RegionID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="RegionID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6238,9 +6238,9 @@ namespace SouthWind
             {
                 if(_EmployeeID!=value){
                     _EmployeeID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="EmployeeID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="EmployeeID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6257,9 +6257,9 @@ namespace SouthWind
             {
                 if(_TerritoryID!=value){
                     _TerritoryID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="TerritoryID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="TerritoryID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6712,9 +6712,9 @@ namespace SouthWind
             {
                 if(_EmployeeID!=value){
                     _EmployeeID=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="EmployeeID");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="EmployeeID");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6731,9 +6731,9 @@ namespace SouthWind
             {
                 if(_LastName!=value){
                     _LastName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="LastName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="LastName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6750,9 +6750,9 @@ namespace SouthWind
             {
                 if(_FirstName!=value){
                     _FirstName=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="FirstName");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="FirstName");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6769,9 +6769,9 @@ namespace SouthWind
             {
                 if(_Title!=value){
                     _Title=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Title");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Title");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6788,9 +6788,9 @@ namespace SouthWind
             {
                 if(_TitleOfCourtesy!=value){
                     _TitleOfCourtesy=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="TitleOfCourtesy");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="TitleOfCourtesy");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6807,9 +6807,9 @@ namespace SouthWind
             {
                 if(_BirthDate!=value){
                     _BirthDate=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="BirthDate");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="BirthDate");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6826,9 +6826,9 @@ namespace SouthWind
             {
                 if(_HireDate!=value){
                     _HireDate=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="HireDate");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="HireDate");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6845,9 +6845,9 @@ namespace SouthWind
             {
                 if(_Address!=value){
                     _Address=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Address");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Address");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6864,9 +6864,9 @@ namespace SouthWind
             {
                 if(_City!=value){
                     _City=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="City");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="City");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6883,9 +6883,9 @@ namespace SouthWind
             {
                 if(_Region!=value){
                     _Region=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Region");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Region");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6902,9 +6902,9 @@ namespace SouthWind
             {
                 if(_PostalCode!=value){
                     _PostalCode=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="PostalCode");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="PostalCode");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6921,9 +6921,9 @@ namespace SouthWind
             {
                 if(_Country!=value){
                     _Country=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Country");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Country");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6940,9 +6940,9 @@ namespace SouthWind
             {
                 if(_HomePhone!=value){
                     _HomePhone=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="HomePhone");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="HomePhone");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6959,9 +6959,9 @@ namespace SouthWind
             {
                 if(_Extension!=value){
                     _Extension=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Extension");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Extension");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6978,9 +6978,9 @@ namespace SouthWind
             {
                 if(_Photo!=value){
                     _Photo=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Photo");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Photo");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -6997,9 +6997,9 @@ namespace SouthWind
             {
                 if(_Notes!=value){
                     _Notes=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="Notes");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="Notes");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -7016,9 +7016,9 @@ namespace SouthWind
             {
                 if(_ReportsTo!=value){
                     _ReportsTo=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="ReportsTo");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="ReportsTo");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }
@@ -7035,9 +7035,9 @@ namespace SouthWind
             {
                 if(_PhotoPath!=value){
                     _PhotoPath=value;
-                    var col=tbl.Columns.SingleOrDefault(x=>x.Name=="PhotoPath");
+                    var col=tbl.Columns.SingleOrDefault(x=>x.ObjName=="PhotoPath");
                     if(col!=null){
-                        if(!_dirtyColumns.Any(x=>x.Name==col.Name) && _isLoaded){
+                        if(!_dirtyColumns.Any(x=>x.ObjName==col.ObjName) && _isLoaded){
                             _dirtyColumns.Add(col);
                         }
                     }

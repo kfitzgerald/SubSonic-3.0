@@ -17,7 +17,7 @@ namespace SubSonic.Schema
 {
     public interface IDBObject
     {
-        string Name { get; set; }
+        string ObjName { get; set; }
         string FriendlyName { get; set; }
         string QualifiedName { get; }
         string SchemaName { get; set; }

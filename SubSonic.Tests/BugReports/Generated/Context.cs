@@ -56,7 +56,7 @@ namespace SouthWind
 
 		public ITable FindByPrimaryKey(string pkName)
         {
-            return DataProvider.Schema.Tables.SingleOrDefault(x => x.PrimaryKey.Name.Equals(pkName, StringComparison.InvariantCultureIgnoreCase));
+            return DataProvider.Schema.Tables.SingleOrDefault(x => x.PrimaryKey.ObjName.Equals(pkName, StringComparison.InvariantCultureIgnoreCase));
         }
 
         public Query<T> GetQuery<T>()
@@ -179,7 +179,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = DataProvider.FindTable(objectName).Name;
+            string tableName = DataProvider.FindTable(objectName).ObjName;
             return new Select(DataProvider, new Aggregate(colName, AggregateFunction.Max)).From(tableName);
         }
 
@@ -188,7 +188,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = this.Provider.FindTable(objectName).Name;
+            string tableName = this.Provider.FindTable(objectName).ObjName;
             return new Select(this.Provider, new Aggregate(colName, AggregateFunction.Min)).From(tableName);
         }
 
@@ -197,7 +197,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = this.Provider.FindTable(objectName).Name;
+            string tableName = this.Provider.FindTable(objectName).ObjName;
             return new Select(this.Provider, new Aggregate(colName, AggregateFunction.Sum)).From(tableName);
         }
 
@@ -206,7 +206,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = this.Provider.FindTable(objectName).Name;
+            string tableName = this.Provider.FindTable(objectName).ObjName;
             return new Select(this.Provider, new Aggregate(colName, AggregateFunction.Avg)).From(tableName);
         }
 
@@ -215,7 +215,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = this.Provider.FindTable(objectName).Name;
+            string tableName = this.Provider.FindTable(objectName).ObjName;
             return new Select(this.Provider, new Aggregate(colName, AggregateFunction.Count)).From(tableName);
         }
 
@@ -224,7 +224,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = this.Provider.FindTable(objectName).Name;
+            string tableName = this.Provider.FindTable(objectName).ObjName;
             return new Select(this.Provider, new Aggregate(colName, AggregateFunction.Var)).From(tableName);
         }
 
@@ -233,7 +233,7 @@ namespace SouthWind
             LambdaExpression lamda = column;
             string colName = lamda.ParseObjectValue();
             string objectName = typeof(T).Name;
-            string tableName = this.Provider.FindTable(objectName).Name;
+            string tableName = this.Provider.FindTable(objectName).ObjName;
             return new Select(this.Provider, new Aggregate(colName, AggregateFunction.StDev)).From(tableName);
         }
 

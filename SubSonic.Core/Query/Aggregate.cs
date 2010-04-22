@@ -447,7 +447,7 @@ namespace SubSonic.Query
         {
             ColumnName = column.QualifiedName;
             _aggregateType = aggregateType;
-            Alias = String.Concat(GetFunctionType(this), "Of", column.Name);
+            Alias = String.Concat(GetFunctionType(this), "Of", column.ObjName);
         }
 
         /// <summary>

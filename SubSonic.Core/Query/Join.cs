@@ -141,6 +141,7 @@ namespace SubSonic.Query
         /// <summary>
         /// Gets the join type value.
         /// </summary>
+        /// <param name="generator">Sql Generator</param>
         /// <param name="j">The j.</param>
         /// <returns></returns>
         public static string GetJoinTypeValue(ISqlGenerator generator, JoinType j)
@@ -178,8 +179,8 @@ namespace SubSonic.Query
             if(typeof(object) == typeof(Join))
             {
                 Join jCompare = (Join)obj;
-                return (FromColumn.Name.Equals(jCompare.FromColumn.Name, StringComparison.InvariantCultureIgnoreCase) &&
-                        ToColumn.Name.Equals(jCompare.ToColumn.Name, StringComparison.InvariantCultureIgnoreCase));
+                return (FromColumn.ObjName.Equals(jCompare.FromColumn.ObjName, StringComparison.InvariantCultureIgnoreCase) &&
+                        ToColumn.ObjName.Equals(jCompare.ToColumn.ObjName, StringComparison.InvariantCultureIgnoreCase));
             }
 
             return base.Equals(obj);
@@ -187,7 +188,7 @@ namespace SubSonic.Query
 
         public override int GetHashCode()
         {
-            int hash = FromColumn.Name.GetHashCode() + ToColumn.Name.GetHashCode();
+            int hash = FromColumn.ObjName.GetHashCode() + ToColumn.ObjName.GetHashCode();
             return hash;
         }
     }

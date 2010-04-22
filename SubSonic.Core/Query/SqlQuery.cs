@@ -134,7 +134,7 @@ namespace SubSonic.Query
             if(!String.IsNullOrEmpty(tableName))
                 providerTable = tableName;
             if(FromTables.Count > 0)
-                providerTable = FromTables[0].Name;
+                providerTable = FromTables[0].ObjName;
 
             if(!String.IsNullOrEmpty(Name))
                 providerColumn = Name;
@@ -163,12 +163,12 @@ namespace SubSonic.Query
             foreach(Constraint constrain in c)
             {
                 IColumn column = _provider.FindTable(typeof(T).Name).GetColumnByPropertyName(constrain.ColumnName);
-                constrain.ColumnName = column.Name;
-                constrain.ConstructionFragment = column.Name;
+                constrain.ColumnName = column.ObjName;
+                constrain.ConstructionFragment = column.ObjName;
                 constrain.DbType = column.DataType;
                 constrain.ParameterName = column.ParameterName;
                 constrain.QualifiedColumnName = column.QualifiedName;
-                constrain.TableName = column.Table.Name;
+                constrain.TableName = column.Table.ObjName;
                 Constraints.Add(constrain);
             }
 
@@ -192,9 +192,9 @@ namespace SubSonic.Query
         /// <returns></returns>
         public Constraint Where(IColumn column)
         {
-            Constraint c = new Constraint(ConstraintType.Where, column.Name, column.QualifiedName, column.Name, this)
+            Constraint c = new Constraint(ConstraintType.Where, column.ObjName, column.QualifiedName, column.ObjName, this)
                                {
-                                   TableName = column.Table.Name
+                                   TableName = column.Table.ObjName
                                };
             return c;
         }
@@ -235,9 +235,9 @@ namespace SubSonic.Query
         /// <returns></returns>
         public Constraint Or(IColumn column)
         {
-            Constraint c = new Constraint(ConstraintType.Or, column.Name, column.QualifiedName, column.Name, this)
+            Constraint c = new Constraint(ConstraintType.Or, column.ObjName, column.QualifiedName, column.ObjName, this)
                                {
-                                   TableName = column.Table.Name
+                                   TableName = column.Table.ObjName
                                };
             return c;
         }
@@ -328,9 +328,9 @@ namespace SubSonic.Query
         /// <returns></returns>
         public Constraint And(IColumn column)
         {
-            Constraint c = new Constraint(ConstraintType.And, column.Name, column.QualifiedName, column.Name, this)
+            Constraint c = new Constraint(ConstraintType.And, column.ObjName, column.QualifiedName, column.ObjName, this)
                                {
-                                   TableName = column.Table.Name
+                                   TableName = column.Table.ObjName
                                };
             return c;
         }
@@ -600,11 +600,11 @@ namespace SubSonic.Query
 
             var fromColumn = FromTables[0].GetColumn(fromColumnName);
             if(fromColumn == null)
-                throw new InvalidOperationException("Don't know which column to join to - can't find column " + fromColumnName + " in table " + FromTables[0].Name);
+                throw new InvalidOperationException("Don't know which column to join to - can't find column " + fromColumnName + " in table " + FromTables[0].ObjName);
 
             var toColumn = toTable.GetColumn(toColumnName);
             if(toColumn == null)
-                throw new InvalidOperationException("Don't know which column to join to - can't find column " + toColumnName + " in table " + toTable.Name);
+                throw new InvalidOperationException("Don't know which column to join to - can't find column " + toColumnName + " in table " + toTable.ObjName);
 
             CreateJoin(fromColumn, toColumn, Join.JoinType.Inner);
         }
@@ -630,13 +630,13 @@ namespace SubSonic.Query
             var fromColumn = fromTable.PrimaryKey;
 
             //find the From table's PK in the other table
-            var toColumn = toTable.GetColumn(fromColumn.Name);
+            var toColumn = toTable.GetColumn(fromColumn.ObjName);
 
             if(toColumn == null)
             {
                 //second effort - reverse the lookup and match the PK of the toTable to the fromTable
                 toColumn = toTable.PrimaryKey;
-                fromColumn = fromTable.GetColumn(toColumn.Name);
+                fromColumn = fromTable.GetColumn(toColumn.ObjName);
             }
 
             if(toColumn == null)
@@ -645,7 +645,7 @@ namespace SubSonic.Query
                 foreach(var col in fromTable.Columns)
                 {
                     fromColumn = col;
-                    toColumn = toTable.GetColumn(fromColumn.Name);
+                    toColumn = toTable.GetColumn(fromColumn.ObjName);
 
                     if(toColumn != null)
                         break;
@@ -659,7 +659,7 @@ namespace SubSonic.Query
                 foreach(var col in toTable.Columns)
                 {
                     fromColumn = col;
-                    toColumn = toTable.GetColumn(fromColumn.Name);
+                    toColumn = toTable.GetColumn(fromColumn.ObjName);
 
                     if(toColumn != null)
                         break;
@@ -668,7 +668,7 @@ namespace SubSonic.Query
 
             //OK - give up
             if(toColumn == null)
-                throw new InvalidOperationException("Don't know which column to join to - tried to join based on Primary Key (" + fromColumn.Name + ") but couldn't find a match");
+                throw new InvalidOperationException("Don't know which column to join to - tried to join based on Primary Key (" + fromColumn.ObjName + ") but couldn't find a match");
 
             CreateJoin(fromColumn, toColumn, type);
         }

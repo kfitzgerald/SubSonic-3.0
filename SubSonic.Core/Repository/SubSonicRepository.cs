@@ -105,7 +105,7 @@ namespace SubSonic.Repository
         {
             ITable tbl = GetTable();
             return _db.Select.From(tbl)
-                .Where(tbl.PrimaryKey.Name).IsEqualTo(key)
+                .Where(tbl.PrimaryKey.ObjName).IsEqualTo(key)
                 .ExecuteSingle<T>();
         }
 
@@ -123,7 +123,7 @@ namespace SubSonic.Repository
         public PagedList<T> GetPaged(int pageIndex, int pageSize)
         {
             ITable tbl = GetTable();
-            string orderBy = tbl.PrimaryKey != null ? tbl.PrimaryKey.Name : tbl.Columns[0].Name;
+            string orderBy = tbl.PrimaryKey != null ? tbl.PrimaryKey.ObjName : tbl.Columns[0].ObjName;
             return GetPaged(orderBy, pageIndex, pageSize);
         }
 
@@ -193,7 +193,7 @@ namespace SubSonic.Repository
                     query.CommandSql += "; SELECT SCOPE_IDENTITY() as new_id";
                 }
 
-                /** add "using" keywords to dispose IDataReader rdr object after its get out of the scope **/
+                /* add "using" keywords to dispose IDataReader rdr object after its get out of the scope */
                 using (var rdr = provider.ExecuteReader(query))
                 {
                     if (rdr.Read())
@@ -205,12 +205,12 @@ namespace SubSonic.Repository
                         try
                         {
                             var tbl = provider.FindOrCreateTable(typeof(T));
-                            var prop = item.GetType().GetProperty(tbl.PrimaryKey.Name);
+                            var prop = item.GetType().GetProperty(tbl.PrimaryKey.ObjName);
                             var settable = result.ChangeTypeTo(prop.PropertyType);
                             prop.SetValue(item, settable, null);
 
                         }
-                        catch (Exception x)
+                        catch //(Exception x)
                         {
                             //swallow it - I don't like this per se but this is a convenience and we
                             //don't want to throw the whole thing just because we can't auto-set the value
@@ -353,7 +353,7 @@ namespace SubSonic.Repository
             ITable tbl = _db.FindTable(typeof(T).Name);
             int result = 0;
             if(tbl != null)
-                result = new Delete<T>(provider).Where(tbl.PrimaryKey.Name).IsEqualTo(key).Execute();
+                result = new Delete<T>(provider).Where(tbl.PrimaryKey.ObjName).IsEqualTo(key).Execute();
             return result;
         }
 

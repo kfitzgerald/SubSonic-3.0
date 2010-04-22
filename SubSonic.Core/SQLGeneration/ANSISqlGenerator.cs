@@ -303,7 +303,7 @@ namespace SubSonic.SqlGeneration
                 ITable table = tbl;
 
                 //Can't pop a table into the FROM list if it's also in a JOIN
-                if (!query.Joins.Any(x => x.FromColumn.Table.Name.Equals(table.Name, StringComparison.InvariantCultureIgnoreCase)))
+                if (!query.Joins.Any(x => x.FromColumn.Table.ObjName.Equals(table.ObjName, StringComparison.InvariantCultureIgnoreCase)))
                 {
                     if (!isFirst)
                         sb.Append(", ");
@@ -370,7 +370,7 @@ namespace SubSonic.SqlGeneration
                     IColumn col = FindColumn(c.ColumnName);
                     if (!isAggregate && col != null)
                     {
-                        columnName = c.ConstructionFragment.FastReplace(col.Name, col.QualifiedName);
+                        columnName = c.ConstructionFragment.FastReplace(col.ObjName, col.QualifiedName);
                         c.ParameterName = String.Concat(col.ParameterName, indexer.ToString());
                         c.DbType = col.DataType;
                     }

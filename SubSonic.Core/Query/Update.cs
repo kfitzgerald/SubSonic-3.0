@@ -119,7 +119,7 @@ namespace SubSonic.Query
             _provider = table.Provider;
             _query.QueryCommandType = QueryType.Update;
             ITable tbl = table;
-            DatabaseTable dbTable = new DatabaseTable(tbl.Name, _provider, tbl.ClassName);
+            DatabaseTable dbTable = new DatabaseTable(tbl.ObjName, _provider, tbl.ClassName);
             dbTable.Columns = tbl.Columns;
             _query.FromTables.Add(dbTable);
         }
@@ -191,7 +191,7 @@ namespace SubSonic.Query
                             {
                                 query = this,
                                 ColumnName = column.QualifiedName,
-                                ParameterName = (_provider.ParameterPrefix + "up_" + column.Name),
+                                ParameterName = (_provider.ParameterPrefix + "up_" + column.ObjName),
                                 IsExpression = isExpression,
                                 DataType = column.DataType
                             };
@@ -238,7 +238,7 @@ namespace SubSonic.Query
                     // EK: The line below is intentional. See: http://weblogs.asp.net/fbouma/archive/2009/06/25/linq-beware-of-the-access-to-modified-closure-demon.aspx
                     Setting setting = s;
 
-                    var col = table.Columns.SingleOrDefault(x => x.Name.Equals(setting.ColumnName, StringComparison.InvariantCultureIgnoreCase));
+                    var col = table.Columns.SingleOrDefault(x => x.ObjName.Equals(setting.ColumnName, StringComparison.InvariantCultureIgnoreCase));
                     if(col != null)
                         s.DataType = col.DataType;
                 }
@@ -262,12 +262,12 @@ namespace SubSonic.Query
             foreach(Constraint constrain in c)
             {
                 IColumn column = _provider.FindTable(typeof(T).Name).GetColumnByPropertyName(constrain.ColumnName);
-                constrain.ColumnName = column.Name;
-                constrain.ConstructionFragment = column.Name;
+                constrain.ColumnName = column.ObjName;
+                constrain.ConstructionFragment = column.ObjName;
                 constrain.DbType = column.DataType;
                 constrain.ParameterName = column.ParameterName;
                 constrain.QualifiedColumnName = column.QualifiedName;
-                constrain.TableName = column.Table.Name;
+                constrain.TableName = column.Table.ObjName;
                 Constraints.Add(constrain);
             }
 
@@ -295,7 +295,7 @@ namespace SubSonic.Query
             Constraint c = lamda.ParseConstraint();
             var tbl = _provider.FindOrCreateTable(typeof(T));
             IColumn col = tbl.GetColumnByPropertyName(c.ColumnName);
-            Constraint con = new Constraint(c.Condition, col.Name, col.QualifiedName, col.Name)
+            Constraint con = new Constraint(c.Condition, col.ObjName, col.QualifiedName, col.ObjName)
                                  {
                                      ParameterName = col.PropertyName,
                                      ParameterValue = c.ParameterValue

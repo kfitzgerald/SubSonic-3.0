@@ -92,7 +92,7 @@ namespace SubSonic.SqlGeneration.Schema
             StringBuilder createSql = new StringBuilder();
 
             foreach(IColumn col in table.Columns)
-                createSql.AppendFormat("\r\n  `{0}`{1},", col.Name, GenerateColumnAttributes(col));
+                createSql.AppendFormat("\r\n  `{0}`{1},", col.ObjName, GenerateColumnAttributes(col));
             string columnSql = createSql.ToString();
             return columnSql.Chop(",");
         }

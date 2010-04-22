@@ -35,21 +35,21 @@ namespace SubSonic.Schema
         public string[] CreateColumnMigrationSql(ITable source)
         {
             var result = new List<string>();
-            var existing = source.Provider.GetTableFromDB(source.Name);
+            var existing = source.Provider.GetTableFromDB(source.ObjName);
             //remove columns not found
             foreach(var c in existing.Columns)
             {
-                var colFound = source.GetColumn(c.Name);
+                var colFound = source.GetColumn(c.ObjName);
                 if(colFound == null)
                 {
                     //remove it
-                    result.Add(source.DropColumnSql(c.Name));
+                    result.Add(source.DropColumnSql(c.ObjName));
                 }
             }
             //loop the existing table and add columns not found, update columns found...
             foreach(var col in source.Columns)
             {
-                var colFound = existing.GetColumn(col.Name);
+                var colFound = existing.GetColumn(col.ObjName);
                 if(colFound == null)
                 {
                     //add it
@@ -88,7 +88,7 @@ namespace SubSonic.Schema
             var result = new List<string>();
 
             var table = type.ToSchemaTable(provider);
-            var existing = provider.GetTableFromDB(table.Name);
+            var existing = provider.GetTableFromDB(table.ObjName);
 
             if(existing != null)
             {

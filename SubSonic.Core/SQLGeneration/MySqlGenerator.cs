@@ -104,10 +104,10 @@ namespace SubSonic.SqlGeneration
             StringBuilder columnsSql = new StringBuilder();
 
             foreach(IColumn col in table.Columns)
-                columnsSql.AppendFormat("\r\n  `{0}`{1},", col.Name, GenerateColumnAttributes(col));
+                columnsSql.AppendFormat("\r\n  `{0}`{1},", col.ObjName, GenerateColumnAttributes(col));
 
             if(table.HasPrimaryKey)
-                columnsSql.AppendFormat("\r\n  PRIMARY KEY (`{0}`),", table.PrimaryKey.Name);
+                columnsSql.AppendFormat("\r\n  PRIMARY KEY (`{0}`),", table.PrimaryKey.ObjName);
 
             string sql = columnsSql.ToString();
             return sql.Chop(",");
@@ -127,7 +127,7 @@ namespace SubSonic.SqlGeneration
             {
                 if(!isFirst)
                     sb.Append(",");
-                sb.Append(tbl.Name);
+                sb.Append(tbl.ObjName);
                 isFirst = false;
             }
             sb.Append(Environment.NewLine);

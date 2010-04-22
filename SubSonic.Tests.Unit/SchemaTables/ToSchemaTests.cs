@@ -109,7 +109,7 @@ namespace SubSonic.Tests.Unit.SchemaTables
         public void ToSchemaTable_Should_Create_ITable_Named_SubSonicTests()
         {
             var table = typeof(SubSonicTest).ToSchemaTable(_provider);
-            Assert.Equal("SubSonicTests", table.Name);
+            Assert.Equal("SubSonicTests", table.ObjName);
         }
 
         [Fact]
@@ -131,7 +131,7 @@ namespace SubSonic.Tests.Unit.SchemaTables
         public void ToSchemaTable_Should_Create_ITable_With_PrimaryKey_Called_Key_Which_Is_Guid()
         {
             var table = typeof(SubSonicTest).ToSchemaTable(_provider);
-            Assert.Equal("Key", table.PrimaryKey.Name);
+            Assert.Equal("Key", table.PrimaryKey.ObjName);
             Assert.Equal(DbType.Guid, table.PrimaryKey.DataType);
         }
 
@@ -139,7 +139,7 @@ namespace SubSonic.Tests.Unit.SchemaTables
         public void ToSchemaTable_Should_Create_ITable_From_IDAsKey_With_ID_As_PK()
         {
             var table = typeof(IDAsKey).ToSchemaTable(_provider);
-            Assert.Equal("ID", table.PrimaryKey.Name);
+            Assert.Equal("ID", table.PrimaryKey.ObjName);
             Assert.True(table.PrimaryKey.IsNumeric);
             Assert.True(table.PrimaryKey.AutoIncrement);
         }
@@ -148,7 +148,7 @@ namespace SubSonic.Tests.Unit.SchemaTables
         public void ToSchemaTable_Should_Create_ITable_From_TestType_With_TestTypeID_As_PK()
         {
             var table = typeof(TestType).ToSchemaTable(_provider);
-            Assert.Equal("TestTypeID", table.PrimaryKey.Name);
+            Assert.Equal("TestTypeID", table.PrimaryKey.ObjName);
             Assert.True(table.PrimaryKey.IsNumeric);
             Assert.True(table.PrimaryKey.AutoIncrement);
         }
@@ -251,7 +251,7 @@ namespace SubSonic.Tests.Unit.SchemaTables
 		public void ToSchemaTable_Should_Set_TableName_To_TestTableName_When_TableNameOverrideAttribute_Used()
 		{
 			var table = typeof(TestTypeWithTableNameOverride).ToSchemaTable(_provider);
-			Assert.Equal(table.Name, "TestTableName");
+			Assert.Equal(table.ObjName, "TestTableName");
         }
 
         [Fact]
